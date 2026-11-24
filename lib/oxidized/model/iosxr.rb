@@ -19,6 +19,7 @@ class IOSXR < Oxidized::Model
 
   cmd 'show version' do |cfg|
     cfg.gsub! /^System\suptime.*\n?/, ''
+    cfg.gsub! /^\S+ uptime is .*\n?/, ''
     comment cfg
   end
 
